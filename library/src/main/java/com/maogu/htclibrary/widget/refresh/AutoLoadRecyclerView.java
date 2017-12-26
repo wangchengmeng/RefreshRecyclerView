@@ -17,7 +17,7 @@ public class AutoLoadRecyclerView extends RecyclerView {
 
     private boolean mHasMore; //是否可以加载更多数据
     private RefLoadListener mLoadListener; //下拉刷新和上啦加载更多的监听
-    private VRefreshLayout mSwipeRefreshLayout; //刷新控件
+    private RefreshLayout mSwipeRefreshLayout; //刷新控件
 
     protected View mEmptyView;//空页面的View
     private Context mContext;
@@ -101,11 +101,11 @@ public class AutoLoadRecyclerView extends RecyclerView {
      *
      * @param loadListener 上拉加载更多的监听
      */
-    public void setAllListener(VRefreshLayout layout, RefLoadListener loadListener) {
+    public void setAllListener(RefreshLayout layout, RefLoadListener loadListener) {
         this.mLoadListener = loadListener;
         mSwipeRefreshLayout = layout;
         if (null != mSwipeRefreshLayout) {
-            mSwipeRefreshLayout.setOnRefreshListener(new VRefreshLayout.OnRefreshListener() {
+            mSwipeRefreshLayout.setOnRefreshListener(new RefreshLayout.OnRefreshListener() {
                 @Override
                 public void onRefresh() {
                     if (null != mLoadListener) {
@@ -128,7 +128,7 @@ public class AutoLoadRecyclerView extends RecyclerView {
      *
      * @param layout VRefreshLayout
      */
-    private void bindRefreshLayout(VRefreshLayout layout) {
+    private void bindRefreshLayout(RefreshLayout layout) {
         mSwipeRefreshLayout = layout;
     }
 
@@ -137,7 +137,7 @@ public class AutoLoadRecyclerView extends RecyclerView {
      *
      * @param layout 刷新控件
      */
-    public void autoRefresh(VRefreshLayout layout) {
+    public void autoRefresh(RefreshLayout layout) {
         bindRefreshLayout(layout);
         mSwipeRefreshLayout.autoRefresh();
     }
@@ -147,7 +147,7 @@ public class AutoLoadRecyclerView extends RecyclerView {
      *
      * @param autoRefreshCompleteListener 自动刷新完成监听器
      */
-    public void addOnAutoRefreshCompleteListener(final VRefreshLayout.AutoRefreshCompleteListener autoRefreshCompleteListener) {
+    public void addOnAutoRefreshCompleteListener(final RefreshLayout.AutoRefreshCompleteListener autoRefreshCompleteListener) {
         if (null == mSwipeRefreshLayout) {
             return;
         }

@@ -17,10 +17,10 @@ import android.view.ViewTreeObserver;
 import com.maogu.htclibrary.R;
 
 /**
- * @author wang.k
+ * @author wangchengm
  *         支持垂直下拉刷新的Layout
  */
-public class VRefreshLayout extends ViewGroup {
+public class RefreshLayout extends ViewGroup {
 
     private static final int REFRESH_WAIT_TIME = 800;
     private static final int MOVE_TIME = 400;
@@ -58,12 +58,12 @@ public class VRefreshLayout extends ViewGroup {
     private boolean mIsFirstAutoRefresh = true;
     private VRefreshHeaderView mVRefreshHeaderView;
 
-    public VRefreshLayout(Context context) {
+    public RefreshLayout(Context context) {
         super(context);
         initConfig();
     }
 
-    public VRefreshLayout(Context context, AttributeSet attrs) {
+    public RefreshLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         initConfig();
     }

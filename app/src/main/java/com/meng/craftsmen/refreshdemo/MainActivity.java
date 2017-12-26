@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.maogu.htclibrary.widget.refresh.AutoLoadRecyclerView;
 import com.maogu.htclibrary.widget.refresh.RefLoadListener;
-import com.maogu.htclibrary.widget.refresh.VRefreshLayout;
+import com.maogu.htclibrary.widget.refresh.RefreshLayout;
 import com.meng.craftsmen.refreshdemo.view.EmptyView;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private VRefreshLayout mVRefreshLayout;
+    private RefreshLayout mVRefreshLayout;
     private AutoLoadRecyclerView mAutoLoadRecyclerView;
 
     private MainFoundAdapter2 mMainFoundAdapter;
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        mVRefreshLayout = (VRefreshLayout) findViewById(R.id.swipe_container);
+        mVRefreshLayout = (RefreshLayout) findViewById(R.id.swipe_container);
         mAutoLoadRecyclerView = (AutoLoadRecyclerView) findViewById(R.id.rv_common_list);
         mEmptyView = (EmptyView) findViewById(R.id.empty_view);
 

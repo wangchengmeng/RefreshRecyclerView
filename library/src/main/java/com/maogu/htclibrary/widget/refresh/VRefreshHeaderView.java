@@ -16,7 +16,7 @@ import com.maogu.htclibrary.util.DensityUtils;
  * @author wang.k
  *         刷新头部
  */
-public class VRefreshHeaderView extends RelativeLayout implements VRefreshLayout.VRefreshMoveListener {
+public class VRefreshHeaderView extends RelativeLayout implements RefreshLayout.VRefreshMoveListener {
 
     private ImageView mIvRefresh;//刷新的gifImage
     private TextView mTvRefresh;//刷新的文字

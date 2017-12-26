@@ -16,7 +16,7 @@ import com.maogu.htclibrary.widget.CircularProgress;
 
 
 /**
- * @author wang.k
+ * @author wangchengm
  *         刷新控件footer
  */
 public class VRefreshFooterView extends LinearLayout {

@@ -12,7 +12,7 @@ import rx.Observable;
 import rx.Subscription;
 
 /**
- * @author wang.k
+ * @author wangchengm
  *         刷新头部动画
  */
 class VRefreshAnimation {
