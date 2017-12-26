@@ -1,7 +1,10 @@
 # RefreshRecyclerView
 1.自定义下拉刷新 上啦加载更多的 RecyclerView
+
 2.使用观察者模式自动检测RecyclerView没有数据的时候显示的EmptyView
+
 3.Adapter的封装，便捷添加header／footer，以及减少adapter中的冗余代码
+
 4.ViewHolder的封装，结构清晰，方便使用，代码简洁
 
 先上图：
@@ -10,13 +13,18 @@
 
 
 刷新控件：RefreshLayout 
+
 刷新头部：VRefreshHeaderView 
+
 刷新footer：VRefreshFooterView
+
 刷新动画：VRefreshAnimation
+
 自定义RecyclerView：AutoLoadRecyclerView
 
 观察Empty代码实现：
  //观察者 观察列表中是否有数据
+
     protected AdapterDataObserver mEmptyObserver = new AdapterDataObserver() {
         @Override
         public void onChanged() {
@@ -44,7 +52,6 @@
     };
 
 
-
     @Override
     public void setAdapter(Adapter adapter) {
         Adapter oldAdapter = getAdapter();
@@ -61,13 +68,14 @@
 
 
 
-    封装的Adapter：BaseRecyclerAdapter
-    封装的ViewHolder：BaseViewHolder
+封装的Adapter：BaseRecyclerAdapter
 
-    封装前后代码对比：
+封装的ViewHolder：BaseViewHolder
 
+###封装前后代码对比：
 
-    前：
+##前：
+
     public class MainFoundAdapter extends RecyclerView.Adapter<MainFoundAdapter.ViewHolder> {
 
     private List<String> mFoundBeanList;
@@ -121,31 +129,31 @@
     }
 
 
-后：
+##后：
 
-public class MainFoundAdapter2 extends BaseRecyclerAdapter<String> {
-    private Context mContext;
+    public class MainFoundAdapter2 extends BaseRecyclerAdapter<String> {
+        private Context mContext;
 
-    MainFoundAdapter2(Context context, @NonNull List<String> datas) {
-        super(context, R.layout.item_main_found, datas);
-        mContext = context;
-    }
+        MainFoundAdapter2(Context context, @NonNull List<String> datas) {
+            super(context, R.layout.item_main_found, datas);
+            mContext = context;
+        }
 
 
-    @Override
-    protected void onChildBindViewHolder(BaseViewHolder holder, String data) {
-        //逻辑处理
-        holder.setText(R.id.item_content, data);
-    }
+        @Override
+         protected void onChildBindViewHolder(BaseViewHolder holder, String data) {
+            //逻辑处理
+             holder.setText(R.id.item_content, data);
+        }
 }
 
 ####对比之后，也许 就有让你进去观看的动力了
 
-
 ##使用方法：
 
 监听下拉 和 上啦
- mAutoLoadRecyclerView.setAllListener(mVRefreshLayout, new RefLoadListener() {
+
+    mAutoLoadRecyclerView.setAllListener(mVRefreshLayout, new RefLoadListener() {
             @Override
             public void onRefresh() {
                 //下拉刷新
