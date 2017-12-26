@@ -6,6 +6,6 @@
 
 先上图：
 
-[!icon](refresh.gif)
+![icon](refresh.gif)
 
 
