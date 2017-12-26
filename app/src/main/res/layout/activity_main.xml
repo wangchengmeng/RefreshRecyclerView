@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.maogu.htclibrary.widget.refresh.VRefreshLayout
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.maogu.htclibrary.widget.refresh.AutoLoadRecyclerView
+            android:id="@+id/rv_common_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@android:color/transparent"
+            android:fadingEdge="none"
+            android:footerDividersEnabled="false"
+            android:listSelector="@android:color/transparent"
+            android:scrollbars="none"/>
+
+    </com.maogu.htclibrary.widget.refresh.VRefreshLayout>
+
+    <com.meng.craftsmen.refreshdemo.view.EmptyView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="@color/content_bg"
+        android:gravity="center"
+        android:visibility="gone"/>
+
+</RelativeLayout>
+
+
+

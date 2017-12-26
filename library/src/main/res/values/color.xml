@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 灰色 -->
+    <color name="gray">#808080</color>
+
+    <color name="content_bg">#dddddd</color>
+
+    <color name="main_black">#000000</color>
+    <color name="divider_line">#dddddd</color>
+</resources>

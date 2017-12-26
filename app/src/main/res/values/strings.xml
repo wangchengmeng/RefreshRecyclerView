@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RefreshDemo</string>
+    <string name="is_loading_no_more">没有更多</string>
+    <string name="is_loading">正在加载数据&#8230;</string>
+</resources>

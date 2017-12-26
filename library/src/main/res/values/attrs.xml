@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundCornerImageView">
+        <attr name="roundWidth" format="dimension"/>
+        <attr name="roundHeight" format="dimension"/>
+        <attr name="roundLeftTop" format="boolean"/>
+        <attr name="roundLeftBottom" format="boolean"/>
+        <attr name="roundRightTop" format="boolean"/>
+        <attr name="roundRightBottom" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircularProgress">
+        <attr name="circular_progress_color" format="color"/>
+        <attr name="circular_progress_size" format="enum">
+            <enum name="Small" value="0"/>
+            <enum name="Normal" value="1"/>
+            <enum name="Large" value="2"/>
+        </attr>
+        <attr name="circular_progress_border_width" format="dimension"/>
+        <attr name="circular_progress_indeterminate" format="boolean"/>
+        <attr name="circular_progress_max" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension"/>
+        <attr name="border_color" format="color"/>
+        <attr name="border_overlay" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="RatingBarView">
+        <attr name="starImageSize" format="integer"/>
+        <attr name="starPadding" format="integer"/>
+        <attr name="totalCount" format="integer"/>
+        <attr name="starEmpty" format="reference"/>
+        <attr name="starFill" format="reference"/>
+        <attr name="rating" format="integer"/>
+    </declare-styleable>
+</resources>
