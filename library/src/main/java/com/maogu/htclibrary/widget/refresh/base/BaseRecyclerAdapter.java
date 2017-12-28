@@ -17,7 +17,7 @@ import java.util.List;
  * 对RecyclerVIew的Adapter封装基类
  */
 
-public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<BaseViewHolder> {
+public abstract class BaseRecyclerAdapter<VH extends BaseViewHolder, T> extends RecyclerView.Adapter<BaseViewHolder> {
 
     private enum ITEM_TYPE {
         HEADER, //头部
@@ -108,9 +108,11 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<BaseVi
             return new BaseViewHolder(mContext, mFooterView);
         } else {
             //使用子类的ViewHolder（为了方便在子类ViewHolder里面做适配测量）
-            return new BaseViewHolder(mContext,LayoutInflater.from(mContext).inflate(mLayoutId, parent, false));
+            return getViewHolder(LayoutInflater.from(mContext).inflate(mLayoutId, parent, false));
         }
     }
+
+    protected abstract VH getViewHolder(View itemView);
 
     @Override
     public void onBindViewHolder(BaseViewHolder holder, int position) {
