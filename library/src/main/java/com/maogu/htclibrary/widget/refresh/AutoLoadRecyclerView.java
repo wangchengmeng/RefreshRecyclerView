@@ -207,6 +207,20 @@ public class AutoLoadRecyclerView extends RecyclerView {
         @Override
         public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
 
+            /**
+             *RecyclerView.canScrollVertically(-1)的值表示是否能向下滚动，false表示已经滚动到顶部
+             * RecyclerView.canScrollVertically(1)的值表示是否能向上滚动，false表示已经滚动到底部
+             *
+             * 原理：
+             * if (recyclerView.computeVerticalScrollExtent() + recyclerView.computeVerticalScrollOffset()
+             >= recyclerView.computeVerticalScrollRange())
+             return true;
+             *
+             * computeVerticalScrollExtent()是当前屏幕显示的区域高度，
+             * computeVerticalScrollOffset() 是当前屏幕之前滑过的距离，
+             * 而computeVerticalScrollRange()是整个View控件的高度。
+             */
+
             if (!canScrollVertically(1)) {
                 if (null != mSwipeRefreshLayout && mHasMore) {
                     mSwipeRefreshLayout.resetLoadingPosition();
@@ -234,9 +248,6 @@ public class AutoLoadRecyclerView extends RecyclerView {
 //
 //                //时判断界面显示的最后item的position是否等于itemCount总数-1也就是最后一个item的position
 //                //如果相等则说明已经滑动到最后了
-//
-//
-//
 //                if (lastPosition == recyclerView.getLayoutManager().getItemCount() - 1) {
 //
 //                    if (null != mSwipeRefreshLayout && mHasMore) {
